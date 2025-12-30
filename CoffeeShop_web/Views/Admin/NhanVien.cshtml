@@ -1,0 +1,44 @@
+﻿@model List<CoffeeShop_web.Models.TAIKHOAN>
+
+@{
+    ViewBag.Title = "Quản lý nhân viên";
+}
+
+<div class="admin-container">
+    <div class="admin-header">
+        <h2>👥 Quản lý nhân viên</h2>
+
+        <a href="@Url.Action("ThemNhanVien","Admin")"
+           class="btn-add">
+            ➕ Thêm nhân viên
+        </a>
+    </div>
+
+    <table class="admin-table">
+        <thead>
+            <tr>
+                <th>Tên đăng nhập</th>
+                <th>Quyền</th>
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var nv in Model)
+            {
+                <tr>
+                    <td>@nv.TenDangNhap</td>
+                    <td>
+                        <span class="badge staff">@nv.Quyen</span>
+                    </td>
+                    <td>
+                        <a href="@Url.Action("XoaNhanVien","Admin", new { id = nv.MaTaiKhoan })"
+                           class="btn-delete"
+                           onclick="return confirm('Xóa nhân viên này?')">
+                            ❌ Xóa
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

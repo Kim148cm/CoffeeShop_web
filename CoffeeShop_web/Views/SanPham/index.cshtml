@@ -1,0 +1,150 @@
+﻿@model List<CoffeeShop_web.Models.SANPHAM>
+
+<div class="pos-container">
+
+    <!-- ================= HÓA ĐƠN ================= -->
+    <div class="bill-box">
+        <h3>Hóa đơn</h3>
+
+        <table class="bill-table">
+            <thead>
+                <tr>
+                    <th>Tên món</th>
+                    <th>SL</th>
+                    <th>Giá</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="bill-body">
+                <tr>
+                    <td colspan="4" class="empty">Chưa có mặt hàng nào</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="bill-info">
+            <div>Mã hóa đơn: <b>#1</b></div>
+            <div>Ngày: <b>@DateTime.Now.ToString("dd/MM/yyyy")</b></div>
+            <div>Giờ: <b>@DateTime.Now.ToString("HH:mm:ss")</b></div>
+        </div>
+
+        <div class="total">
+            Tổng cộng: <b id="total-money">0 đ</b>
+        </div>
+
+        <div class="bill-actions">
+            <button class="btn temp">Tạm tính</button>
+            <button class="btn pay">Thanh toán</button>
+        </div>
+    </div>
+
+    <!-- ================= THỰC ĐƠN ================= -->
+    <div class="menu-box">
+        <h3>Thực đơn</h3>
+
+        <!-- TAB DANH MỤC -->
+        <div class="menu-tabs">
+            <button class="tab active" onclick="filterLoai('all', this)">Tất cả</button>
+            <button class="tab" onclick="filterLoai('Tra', this)">Trà</button>
+            <button class="tab" onclick="filterLoai('Coffee', this)">Coffee</button>
+            <button class="tab" onclick="filterLoai('Latte', this)">Latte</button>
+        </div>
+
+        <!-- DANH SÁCH MÓN -->
+        <div class="menu-grid">
+            @foreach (var product in Model)
+            {
+                <div class="menu-item"
+                     data-loai="@product.Loai"
+                     onclick="addToBill(@product.MaSanPham, '@product.TenSanPham', @product.Gia)">
+
+                    <!-- ẢNH -->
+                    <img src="@Url.Content("~/Image/" + (string.IsNullOrEmpty(product.HinhAnh)
+        ? "coffee_sua.jpg"
+        : product.HinhAnh))"
+                         style="width:120px;height:120px;object-fit:cover;border-radius:10px"
+                         onerror="this.onerror=null; onerror=null; this.src='@Url.Content("~/Image/coffee_sua.jpg")';" />
+
+                    <!-- TÊN -->
+                    <div class="name">@product.TenSanPham</div>
+
+                    <!-- MÃ -->
+                    <!-- GIÁ -->
+                    <div class="price">@product.Gia.ToString("N0") đ</div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<script>
+    let bill = {};
+
+    function addToBill(id, name, price) {
+        if (bill[id]) {
+            bill[id].qty++;
+        } else {
+            bill[id] = { name, price, qty: 1 };
+        }
+        renderBill();
+    }
+
+    function increaseQty(id) {
+        bill[id].qty++;
+        renderBill();
+    }
+
+    function decreaseQty(id) {
+        bill[id].qty--;
+        if (bill[id].qty <= 0) delete bill[id];
+        renderBill();
+    }
+
+    function removeItem(id) {
+        delete bill[id];
+        renderBill();
+    }
+
+    function renderBill() {
+        let tbody = document.getElementById("bill-body");
+        tbody.innerHTML = "";
+        let total = 0;
+
+        for (let id in bill) {
+            let item = bill[id];
+            let money = item.qty * item.price;
+            total += money;
+
+            tbody.innerHTML += `
+                <tr>
+                    <td>${item.name}</td>
+                    <td>
+                        <button onclick="decreaseQty(${id})">-</button>
+                        ${item.qty}
+                        <button onclick="increaseQty(${id})">+</button>
+                    </td>
+                    <td>${money.toLocaleString()} đ</td>
+                    <td>
+                        <button onclick="removeItem(${id})">❌</button>
+                    </td>
+                </tr>`;
+        }
+
+        if (Object.keys(bill).length === 0) {
+            tbody.innerHTML = `<tr><td colspan="4">Chưa có mặt hàng nào</td></tr>`;
+        }
+
+        document.getElementById("total-money").innerText =
+            total.toLocaleString() + " đ";
+    }
+
+    function filterLoai(loai, btn) {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        btn.classList.add('active');
+
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.style.display =
+                loai === 'all' || item.dataset.loai === loai ? 'block' : 'none';
+        });
+    }
+</script>

@@ -1,0 +1,45 @@
+﻿
+<link href="~/Content/Auth.css" rel="stylesheet" />
+@{
+    Layout = null;
+}
+
+<div class="auth-wrapper">
+    <div class="auth-card">
+
+        <!-- ẢNH NỀN -->
+        <div class="auth-banner"></div>
+
+        <!-- FORM -->
+        <div class="auth-body">
+            <h2>Đăng nhập</h2>
+
+            @if (ViewBag.Error != null)
+            {
+                <div class="error-box">@ViewBag.Error</div>
+            }
+
+            @using (Html.BeginForm())
+            {
+                <div class="form-group">
+                    <label>Tên đăng nhập</label>
+                    <input name="tenDangNhap" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label>Mật khẩu</label>
+                    <input type="password" name="matKhau" class="form-control" />
+                </div>
+
+                <button class="btn-login">Đăng nhập</button>
+            }
+
+            <p class="auth-link">
+                Chưa có tài khoản?
+                <a href="@Url.Action("Register","Auth")">Đăng ký</a>
+
+            </p>
+        </div>
+
+    </div>
+</div>

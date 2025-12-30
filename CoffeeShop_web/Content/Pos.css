@@ -1,0 +1,305 @@
+﻿/* RESET */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f6f8;
+}
+
+/* HEADER */
+.pos-header {
+    height: 60px;
+    background: #2c3e50;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.user-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logout-btn {
+    background: #e74c3c;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+    .logout-btn:hover {
+        background: #c0392b;
+    }
+
+/* MAIN */
+.pos-main {
+    padding: 20px;
+}
+.pos-container {
+    display: flex;
+    gap: 20px;
+}
+
+/* HÓA ĐƠN */
+.bill-box {
+    width: 35%;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.bill-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+    .bill-table th, .bill-table td {
+        border-bottom: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    .bill-table .empty {
+        text-align: center;
+        color: gray;
+    }
+
+.total {
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+.bill-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+}
+
+    .btn.temp {
+        background: #3498db;
+    }
+
+    .btn.pay {
+        background: #e74c3c;
+    }
+
+/* THỰC ĐƠN */
+.menu-box {
+    width: 65%;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 15px;
+}
+
+.menu-item {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+    .menu-item img {
+        width: 100%;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .menu-item .name {
+        margin-top: 8px;
+        font-weight: bold;
+    }
+
+    .menu-item .price {
+        color: #e74c3c;
+        font-weight: bold;
+    }
+.logo img {
+    height: 40px; /* chỉnh to nhỏ ở đây */
+    object-fit: contain;
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+    .logo img {
+        height: 80px;
+    }
+.admin-btn {
+    background: #f1c40f;
+    color: #333;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+    .admin-btn:hover {
+        background: #d4ac0d;
+    }
+.pos-header {
+    height: 60px;
+    background: #2c3e50;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+/* LOGO */
+.logo-img {
+    height: 45px;
+}
+
+/* KHU VỰC PHẢI */
+.top-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* NÚT ADMIN */
+.top-btn {
+    background: #f1c40f;
+    color: #000;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+    .top-btn:hover {
+        background: #d4ac0d;
+    }
+
+/* USER */
+.username {
+    color: #fff;
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+/* LOGOUT */
+.logout-btn {
+    background: #e74c3c;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+    .logout-btn:hover {
+        background: #c0392b;
+    }
+.bill-info {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+    .bill-info div {
+        margin-bottom: 3px;
+    }
+.menu-filter {
+    margin-bottom: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    background: #fff;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+    .filter-btn.active {
+        background: #ff9800;
+        color: white;
+        border-color: #ff9800;
+    }
+/* ===== DANH MỤC NGANG ===== */
+.menu-tabs {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+    .menu-tabs .tab {
+        padding: 10px 18px;
+        border-radius: 20px;
+        border: 1px solid #ddd;
+        background: #f5f5f5;
+        cursor: pointer;
+        font-weight: 500;
+    }
+
+        .menu-tabs .tab.active {
+            background: #ff9800;
+            color: white;
+            border-color: #ff9800;
+        }
+
+/* ===== THỰC ĐƠN ===== */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 20px;
+}
+
+.menu-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+    .menu-item img {
+        width: 100%;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .menu-item .name {
+        margin-top: 8px;
+        font-weight: 600;
+    }
+
+    .menu-item .price {
+        color: #e53935;
+        font-weight: 600;
+    }
+
+

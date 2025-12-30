@@ -1,0 +1,42 @@
+﻿<div class="staff-page">
+    <div class="staff-card">
+
+        <h2>➕ Thêm nhân viên</h2>
+        <p class="staff-desc">Tạo tài khoản cho nhân viên mới</p>
+
+        @if (ViewBag.Error != null)
+        {
+            <div class="error-box">@ViewBag.Error</div>
+        }
+
+        @using (Html.BeginForm("ThemNhanVien", "Admin", FormMethod.Post))
+        {
+            <div class="staff-form-group">
+                <label>Tên đăng nhập</label>
+                <input type="text"
+                       name="tenDangNhap"
+                       placeholder="Nhập tên đăng nhập"
+                       required />
+            </div>
+
+            <div class="staff-form-group">
+                <label>Mật khẩu</label>
+                <input type="password"
+                       name="matKhau"
+                       placeholder="Nhập mật khẩu"
+                       required />
+            </div>
+
+            <div class="staff-actions">
+                <button type="submit" class="staff-submit">
+                    Tạo tài khoản
+                </button>
+
+                <a href="@Url.Action("NhanVien","Admin")"
+                   class="staff-cancel">
+                    Quay lại
+                </a>
+            </div>
+        }
+    </div>
+</div>

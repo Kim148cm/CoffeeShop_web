@@ -1,0 +1,142 @@
+﻿/* ================= NỀN TOÀN TRANG ================= */
+body {
+    margin: 0;
+    background: #f6efe9;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* ================= CĂN GIỮA ================= */
+.auth-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ================= CARD ================= */
+.auth-card {
+    width: 380px;
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    animation: fadeIn 0.4s ease;
+}
+
+/* ================= ẢNH PHỦ ĐẦU CARD ================= */
+.auth-banner {
+    height: 200px; /* tăng chút cho đẹp */
+    background-image: url("/Content/Image/logo.jpg"); /* đúng đường dẫn */
+    background-size: cover;
+    background-position: center;
+}
+
+/* ================= PHẦN FORM ================= */
+.auth-body {
+    padding: 28px;
+}
+
+    .auth-body h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #6b4226;
+        font-weight: 700;
+    }
+
+/* ================= INPUT ================= */
+.form-group label {
+    font-size: 14px;
+    color: #444;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+    .form-control:focus {
+        outline: none;
+        border-color: #6b4226;
+        box-shadow: 0 0 0 2px rgba(107,66,38,0.15);
+    }
+
+/* ================= NÚT ================= */
+.btn-login {
+    width: 100%;
+    background: #6b4226;
+    color: white;
+    border: none;
+    padding: 13px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+    .btn-login:hover {
+        background: #5a361f;
+        transform: translateY(-1px);
+    }
+
+/* ================= LINK ================= */
+.auth-link {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 14px;
+}
+
+    .auth-link a {
+        color: #6b4226;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+        .auth-link a:hover {
+            text-decoration: underline;
+        }
+
+/* ================= LỖI ================= */
+.error-box {
+    background: #ffe0e0;
+    color: #b00000;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* ================= HIỆU ỨNG ================= */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.success-box {
+    background: #e6f7e6;
+    color: #1b5e20;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+    .success-box a {
+        color: #6b4226;
+        font-weight: bold;
+        text-decoration: none;
+    }
+

@@ -1,0 +1,300 @@
+﻿/* ================= ADMIN CONTAINER ================= */
+
+.admin-container {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    margin: 30px;
+}
+
+/* HEADER */
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+    .admin-header h2 {
+        margin: 0;
+        font-weight: 600;
+    }
+
+/* NÚT THÊM NHÂN VIÊN – GỌN */
+.btn-add {
+    background: #ff9800;
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+    .btn-add:hover {
+        background: #e68900;
+    }
+
+/* ================= TABLE ================= */
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    .admin-table th,
+    .admin-table td {
+        padding: 12px;
+        border-bottom: 1px solid #eee;
+        text-align: left;
+    }
+
+    .admin-table th {
+        background: #f8f8f8;
+        font-weight: 600;
+    }
+
+/* BADGE */
+.badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+    .badge.admin {
+        background: #e53935;
+        color: #fff;
+    }
+
+    .badge.staff {
+        background: #43a047;
+        color: #fff;
+    }
+
+/* NÚT XOÁ */
+.btn-delete {
+    background: #f44336;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+    .btn-delete:hover {
+        background: #d32f2f;
+    }
+
+/* =================================================== */
+/* =============== THÊM NHÂN VIÊN ==================== */
+/* =================================================== */
+
+
+.staff-page {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 60px;
+}
+
+.staff-card {
+    width: 420px;
+    background: #fff;
+    padding: 28px 30px;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+    .staff-card h2 {
+        margin-bottom: 6px;
+        font-weight: 600;
+    }
+
+.staff-desc {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 22px;
+}
+
+/* FORM */
+.staff-form-group {
+    margin-bottom: 18px;
+}
+
+    .staff-form-group label {
+        display: block;
+        font-weight: 500;
+        margin-bottom: 6px;
+    }
+
+    .staff-form-group input {
+        width: 100%;
+        padding: 10px 12px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+    }
+
+        .staff-form-group input:focus {
+            outline: none;
+            border-color: #ff9800;
+        }
+
+/* BUTTONS */
+.staff-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.staff-submit {
+    flex: 1;
+    background: #ff9800;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+    .staff-submit:hover {
+        background: #e68900;
+    }
+
+.staff-cancel {
+    flex: 1;
+    text-align: center;
+    background: #f1f1f1;
+    color: #333;
+    padding: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+    .staff-cancel:hover {
+        background: #e0e0e0;
+    }
+
+/* ERROR */
+.error-box {
+    background: #ffe6e6;
+    color: #c62828;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+/* ===== FORM THÊM NHÂN VIÊN - FORCE STYLE ===== */
+
+.staff-page {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.staff-card {
+    width: 460px;
+    background: #fff;
+    padding: 32px 36px;
+    border-radius: 16px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+}
+
+    /* TITLE */
+    .staff-card h2 {
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 6px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+.staff-desc {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 22px;
+}
+
+/* FORM GROUP */
+.staff-form-group {
+    margin-bottom: 18px;
+}
+
+    .staff-form-group label {
+        display: block;
+        font-weight: 500;
+        margin-bottom: 6px;
+    }
+
+    /* INPUT - ÉP STYLE */
+    .staff-form-group input {
+        width: 100% !important;
+        height: 44px;
+        padding: 10px 14px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        font-size: 15px;
+        transition: all .2s ease;
+    }
+
+        .staff-form-group input:focus {
+            outline: none;
+            border-color: #ff9800;
+            box-shadow: 0 0 0 2px rgba(255,152,0,.2);
+        }
+
+/* BUTTONS */
+.staff-actions {
+    display: flex;
+    gap: 14px;
+    margin-top: 24px;
+}
+
+.staff-submit {
+    flex: 1;
+    height: 46px;
+    background: linear-gradient(135deg, #ff9800, #ffb74d);
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+    .staff-submit:hover {
+        opacity: .9;
+    }
+
+.staff-cancel {
+    flex: 1;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f1f1f1;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+    .staff-cancel:hover {
+        background: #e0e0e0;
+    }
+
+/* ERROR */
+.error-box {
+    background: #ffe6e6;
+    color: #c62828;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 18px;
+    font-size: 14px;
+}
+

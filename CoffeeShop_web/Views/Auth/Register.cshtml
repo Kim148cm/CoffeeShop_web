@@ -1,0 +1,68 @@
+﻿
+<link href="~/Content/Auth.css" rel="stylesheet" />
+@{
+    Layout = null;
+}
+@if (ViewBag.Success != null)
+{
+    <div class="success-box">
+        @ViewBag.Success
+        <br /><br />
+        <a class="btn-login" href="@Url.Action("Login","Auth")">
+            👉 Quay lại đăng nhập
+        </a>
+    </div>
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Đăng ký</title>
+    <link href="~/Content/Auth.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="auth-wrapper">
+        <div class="auth-card">
+
+            <!-- ẢNH NỀN -->
+            <div class="auth-banner"></div>
+
+            <!-- FORM -->
+            <div class="auth-body">
+                <h2>Đăng ký</h2>
+
+                @if (ViewBag.Error != null)
+                {
+                    <div class="error-box">@ViewBag.Error</div>
+                }
+
+                @using (Html.BeginForm())
+                {
+                    <div class="form-group">
+                        <label>Tên đăng nhập</label>
+                        <input name="tenDangNhap" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Mật khẩu</label>
+                        <input type="password" name="matKhau" class="form-control" />
+                    </div>
+
+                    <button class="btn-login">Đăng ký</button>
+                }
+
+                <p class="auth-link">
+                    Đã có tài khoản?
+                    <a href="@Url.Action("Login","Auth")">Đăng nhập</a>
+
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
